@@ -1,5 +1,5 @@
 import argparse
-import time
+import tim
 from utils import create_packet, setup_socket, resolve_hostname
 import socket
 import struct
