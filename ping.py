@@ -1,10 +1,33 @@
+"""
+Python implementation of the ping utility.
+
+This module provides functionality to ping a specified host.
+"""
+
 import argparse
-import tim
+import time
 from utils import create_packet, setup_socket, resolve_hostname
 import socket
 import struct
 
 def ping(host, count, interval, packet_size, timeout):
+    """
+    Ping a specified host.
+
+    This function sends ICMP Echo Request packets to a specified host and
+    reports on the round-trip time and packet loss statistics.
+
+    :param host: Hostname or IP address to ping
+    :type host: str
+    :param count: Number of ping requests to send (0 for infinite)
+    :type count: int
+    :param interval: Time interval between ping requests in seconds
+    :type interval: float
+    :param packet_size: Size of the ping packet in bytes
+    :type packet_size: int
+    :param timeout: Timeout for each ping request in seconds
+    :type timeout: float
+    """
     dest_addr = resolve_hostname(host)
     if not dest_addr:
         print(f"Ping: unknown host {host}")
