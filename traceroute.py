@@ -49,7 +49,7 @@ def traceroute(dest_addr, max_hops=30, timeout=1, queries=3, numeric=False, summ
             packet = create_packet(my_id, seq, 36)  # 36 bytes payload
             
             send_time = time.time()
-            sock.sendto(packet, (dest_ip, 33434))  # 33434 is a common starting port for traceroute
+            sock.sendto(packet, (dest_ip, 33434))  
             
             try:
                 sock.settimeout(timeout)
