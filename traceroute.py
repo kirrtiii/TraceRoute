@@ -46,7 +46,7 @@ def traceroute(dest_addr, max_hops=30, timeout=1, queries=3, numeric=False, summ
         
         for seq in range(queries):
             sock.setsockopt(socket.IPPROTO_IP, socket.IP_TTL, ttl)
-            packet = create_packet(my_id, seq, 36)  # 36 bytes payload
+            packet = create_packet(my_id, seq, 36) 
             
             send_time = time.time()
             sock.sendto(packet, (dest_ip, 33434))  

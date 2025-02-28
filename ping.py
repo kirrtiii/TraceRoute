@@ -36,7 +36,7 @@ def ping(host, count, interval, packet_size, timeout):
     print(f"PING {host} ({dest_addr}) {packet_size} bytes of data.")
 
     sock = setup_socket()
-    my_id = 1234  # Arbitrary ID
+    my_id = 1234 
     seq_no = 0
     packets_sent = 0
     packets_received = 0
@@ -44,7 +44,7 @@ def ping(host, count, interval, packet_size, timeout):
     try:
         while count == 0 or packets_sent < count:
             seq_no += 1
-            packet = create_packet(my_id, seq_no, packet_size - 8)  # 8 bytes for ICMP header
+            packet = create_packet(my_id, seq_no, packet_size - 8) 
             sock.sendto(packet, (dest_addr, 1))
             packets_sent += 1
 
@@ -56,7 +56,7 @@ def ping(host, count, interval, packet_size, timeout):
                 icmp_header = recv_packet[20:28]
                 type, code, checksum, packet_id, sequence = struct.unpack('!BBHHH', icmp_header)
 
-                if type == 0 and packet_id == my_id:  # ICMP Echo Reply
+                if type == 0 and packet_id == my_id:  
                     rtt = (recv_time - send_time) * 1000
                     print(f"{len(recv_packet)} bytes from {addr[0]}: icmp_seq={sequence} ttl=64 time={rtt:.2f} ms")
                     packets_received += 1
