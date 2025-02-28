@@ -25,7 +25,15 @@ Both scripts use **raw sockets** to generate ICMP packets, ensuring compatibilit
   - python ping.py <host> -s <size>
 - Ping with Timeout (-t)
   - python ping.py <host> -t <timeout>
-- Filter by Protocol
-  - python pktsniffer.py -r example.pcap --filter tcp/udp/icmp
+
+- python traceroute.py <host>
+- Traceroute with NO hostname resolution (-n)
+  - python traceroute.py <host> -n
+- Traceroute with custom queries per hop (-q)
+  - python traceroute.py <host> -q <queries>
+- Traceroute with NO hostname resolution (-n)
+  - python traceroute.py <host> -n
+- Traceroute with Summary (-S)
+  - python traceroute.py <host> -S
 
 
