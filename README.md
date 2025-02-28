@@ -31,8 +31,6 @@ Both scripts use **raw sockets** to generate ICMP packets, ensuring compatibilit
   - python traceroute.py <host> -n
 - Traceroute with custom queries per hop (-q)
   - python traceroute.py <host> -q <queries>
-- Traceroute with NO hostname resolution (-n)
-  - python traceroute.py <host> -n
 - Traceroute with Summary (-S)
   - python traceroute.py <host> -S
 
